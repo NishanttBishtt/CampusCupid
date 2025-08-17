@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const {mongoose,model} = require("mongoose");
 
 const conversationSchema = new mongoose.Schema({
   participants: [

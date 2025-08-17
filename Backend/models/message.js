@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const {mongoose,model} = require("mongoose");
 
 const messageSchema = new mongoose.Schema({
   conversation: { type: mongoose.Schema.Types.ObjectId, ref: "Conversation" },

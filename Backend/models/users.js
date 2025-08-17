@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const {mongoose,model} = require("mongoose");
 const {createHmac,randomBytes} = require("crypto");
 
 const userschema = new mongoose.Schema({
@@ -61,7 +61,7 @@ const userschema = new mongoose.Schema({
 userschema.pre("save",function(next){
     const user = this;
     if(!user.isModified("password")) return;
-    const salt  = randomBytes(16).toString();
+    const salt  = randomBytes(16).toString("hex");
     const hashedPassword = createHmac("sha256",salt).update(user.password).digest("hex");
     user.salt  = salt;
     user.password = hashedPassword;
