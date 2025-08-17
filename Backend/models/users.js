@@ -31,6 +31,26 @@ const userschema = new mongoose.Schema({
         type:String,
         enum:["USER","ADMIN"],
         default:"USER",
+    },
+    gender:{
+        type:String,
+        required:true,
+    },
+    enterestedin:{
+        type:String,
+        required:true,
+    },
+    college:{
+        type:String,
+        required:true,
+    },
+    course:{
+        type:String,
+        required:true,
+    },
+    year:{
+        type:String,
+        required:true,
     }
 },{timestamps:true});
 
