@@ -36,7 +36,7 @@ const userschema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    enterestedin:{
+    enterestedIn:{
         type:String,
         required:true,
     },
@@ -51,6 +51,9 @@ const userschema = new mongoose.Schema({
     year:{
         type:String,
         required:true,
+    },
+    bio:{
+        type:String
     }
 },{timestamps:true});
 
@@ -66,5 +69,5 @@ userschema.pre("save",function(next){
     next();
 })
 
-const User  = model("users",userschema);
-module.exports = {User};
+const users  = model("users",userschema);
+module.exports = {users};
